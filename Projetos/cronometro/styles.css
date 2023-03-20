@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: rgb(65, 65, 65);
+}
+
+img {
+    height: 200px;
+    display: block;
+    margin: 15px auto 30px auto;
+}
+
+#timer-container {
+    display: block;
+    margin: 0px auto 0 auto;
+    padding-left: 7px;
+    width: 340px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 25px;
+    /* text-align: center; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.number {
+    text-align: center;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+#button {
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
+.button {
+    cursor: pointer;
+    padding: 15px 33px;
+    background-color: rgb(200, 200, 200);
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+#start {
+    background-color: rgb(116, 194, 0);
+}
+#stop {
+    background-color: rgb(192, 192, 0);
+}
+#reset {
+    background-color: brown;
+}
+
+
+.ativo {
+    opacity: 0.4;
+}

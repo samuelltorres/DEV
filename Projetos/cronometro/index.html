@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport">
+    <title>Timer</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <a>
+        <img src="./relogio.png" alt="relogio">
+    </a>
+    <div id="timer-container">
+        <span class="number" id="hour">00</span>
+        <span class="number">:</span>
+        <span class="number" id="minute">00</span>
+        <span class="number">:</span>
+        <span class="number" id="second">00</span>
+    </div>
+    <div id="button">
+        <button class="button" id="start">Iniciar</button>
+        <button class="button" id="stop">Parar</button>
+        <Button class="button" id="reset">Resetar</Button>
+    </div>
+</body>
+<script>
+    let btnStart = document.getElementById("start") // botão inciar do html
+    let btnStop = document.getElementById("stop") // botão parar do html
+    let btnReset = document.getElementById("reset")
+    let hour = document.getElementById("hour") // hora do html
+    let minute = document.getElementById("minute") // minuto do html
+    let second = document.getElementById("second") // segundo do html
+
+    let startTimer // iniciar o tempo
+    let sec = "00" // segundo dentro do js
+    let min = "00" // minutos
+    let hr = "00" // hora
+
+
+    // essa dispara o timer e é chamada quando eu clico no botao START
+    function start() {
+        startTimer = setInterval(function () {
+            sec++ // sec = sec + 1
+
+            if(sec < 10){
+                sec = "0" + sec
+            }
+
+            if (sec == 60) {
+                min++
+                
+                if(min < 10){
+                    min = "0" + min
+                }
+                sec = 0
+            }
+
+            if (min == 60) {
+                hr++
+                if(hr < 10){
+                    hr = "0" + hr
+                }
+
+                min = 0
+            }
+            btnStart.classList.add("ativo")
+            btnStop.classList.remove("ativo")
+            attValue()
+
+        }, 1000);
+    }
+
+    function stop(){
+        clearInterval(startTimer)
+        btnStart.classList.remove("ativo")
+        btnStop.classList.add("ativo")
+    }
+
+    function reset(){
+        clearInterval(startTimer)
+        ms = "00"
+        sec = "00"
+        hr = "00"
+        btnStart.classList.remove("ativo")
+        btnStop.classList.remove("ativo")
+        attValue()
+
+    }
+
+    function attValue() {
+        second.innerHTML = sec
+        minute.innerHTML = min
+        hour.innerHTML = hr
+    }
+
+    btnStart.addEventListener("click", start) // FOFOQUEIRO iniciando
+    btnStop.addEventListener("click", stop) // parando
+    btnReset.addEventListener("click", reset) // resetando
+
+
+
+</script>
+
+</html>
